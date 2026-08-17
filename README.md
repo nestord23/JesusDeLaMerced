@@ -1,46 +1,45 @@
-# Astro Starter Kit: Basics
+# Jesús de la Merced — Sacra Traditio
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+Landing page informativa de Jesús Nazareno de la Merced, Patrón Jurado de la Ciudad de Guatemala, custodiado en el Templo de Nuestra Señora de las Mercedes (zona 1, Ciudad de Guatemala).
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+La página presenta la historia de la imagen, su ficha técnica, las tradiciones y leyendas de los devotos, el itinerario procesional del Viernes Santo e información para la visita al templo.
 
-## 🚀 Project Structure
+## Secciones
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Historia** — cronología desde la talla de 1654 (Mateo de Zúñiga) hasta el culto actual de la Asociación de Devotos (JDLM).
+- **La imagen** — iconografía del Nazareno barroco guatemalteco.
+- **Ficha técnica** — datos de la imagen, marchas oficiales y anda procesional.
+- **Tradición y leyenda** — relatos transmitidos entre los fieles de la Merced.
+- **Procesión** — recorrido del Viernes Santo con horarios de referencia.
+- **Visítanos** — dirección del templo y enlace a su ubicación.
+
+## Stack
+
+- [Astro](https://astro.build) 7
+- CSS vanilla por capas: tokens de diseño, reset, layouts, componentes (BEM en español) y features
+- Tipografías auto-alojadas con @fontsource-variable: Playfair Display, Source Serif 4 y Montserrat
+
+## Estructura
 
 ```text
 /
 ├── public/
-│   └── favicon.svg
 ├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
+│   ├── components/     # Emblem, Navbar, Footer, Button, Chip, Divider, FactCard, Chronology
+│   ├── layouts/        # Layout.astro (HTML base, fuentes y estilos)
+│   ├── pages/          # index.astro (página única)
+│   └── styles/
+│       ├── base/       # tokens y reset
+│       ├── layouts/    # contenedor y grid
+│       ├── components/ # estilos BEM de componentes
+│       └── features/   # hero, navegación, secciones, pie de página
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Comandos
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| Comando        | Acción                                        |
+| :------------- | :-------------------------------------------- |
+| `pnpm dev`     | Servidor local de desarrollo en `localhost:4321` |
+| `pnpm build`   | Genera el sitio estático en `./dist/`         |
+| `pnpm preview` | Previsualiza el build localmente              |

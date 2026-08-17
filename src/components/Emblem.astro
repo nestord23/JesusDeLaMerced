@@ -1,13 +1,10 @@
 ---
 interface Props {
-	variant?: 'marca' | 'divisor' | 'centro';
-	animated?: boolean;
+	variant?: 'marca' | 'divisor';
 }
 
-const { variant = 'marca', animated = false } = Astro.props;
-const clase = ['emblema', `emblema--${variant}`, animated ? 'emblema--animado' : '']
-	.filter(Boolean)
-	.join(' ');
+const { variant = 'marca' } = Astro.props;
+const clase = `emblema emblema--${variant}`;
 
 const angulosRayos = Array.from({ length: 12 }, (_, indice) => indice * 30);
 ---

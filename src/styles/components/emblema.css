@@ -18,31 +18,3 @@
 	width: 1.25rem;
 	height: 1.25rem;
 }
-
-.emblema--centro {
-	width: min(72vw, 18rem);
-	height: auto;
-}
-
-.emblema--animado {
-	animation: respirar 7s ease-in-out infinite;
-}
-
-@keyframes respirar {
-	0%,
-	100% {
-		transform: scale(1);
-		opacity: 1;
-	}
-
-	50% {
-		transform: scale(1.04);
-		opacity: 0.92;
-	}
-}
-
-@media (prefers-reduced-motion: reduce) {
-	.emblema--animado {
-		animation: none;
-	}
-}

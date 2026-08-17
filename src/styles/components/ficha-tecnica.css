@@ -1,9 +1,9 @@
 .ficha-tecnica {
 	background-color: var(--color-surface-container-lowest);
 	border: 1px solid var(--color-accent-gold-soft);
-	border-radius: var(--radio-base);
-	box-shadow: var(--sombra-ambiente);
-	padding: var(--espacio-4);
+	border-radius: var(--radius-base);
+	box-shadow: var(--shadow-ambient);
+	padding: var(--space-4);
 }
 
 .ficha-tecnica__lista {
@@ -14,8 +14,8 @@
 .ficha-tecnica__fila {
 	display: grid;
 	grid-template-columns: 1fr;
-	gap: var(--espacio-1);
-	padding-block: var(--espacio-2);
+	gap: var(--space-1);
+	padding-block: var(--space-2);
 }
 
 .ficha-tecnica__fila + .ficha-tecnica__fila {
@@ -23,24 +23,24 @@
 }
 
 .ficha-tecnica__termino {
-	font-family: var(--fuente-etiqueta);
+	font-family: var(--font-label);
 	font-size: var(--label-caps);
 	font-weight: 600;
-	line-height: var(--label-caps-linea);
-	letter-spacing: var(--label-caps-espaciado);
+	line-height: var(--label-caps-line-height);
+	letter-spacing: var(--label-caps-spacing);
 	text-transform: uppercase;
 	color: var(--color-on-surface-variant);
 }
 
 .ficha-tecnica__valor {
 	font-size: 15px;
-	line-height: var(--body-md-linea);
+	line-height: var(--body-md-line-height);
 	color: var(--color-on-surface-warm);
 }
 
 .ficha-tecnica__nota {
-	margin: var(--espacio-3) 0 0;
-	padding-top: var(--espacio-3);
+	margin: var(--space-3) 0 0;
+	padding-top: var(--space-3);
 	border-top: 1px solid var(--color-accent-gold-faint);
 	text-align: center;
 	font-size: 12.5px;
@@ -50,7 +50,7 @@
 @media (min-width: 640px) {
 	.ficha-tecnica__fila {
 		grid-template-columns: 220px 1fr;
-		gap: var(--espacio-4);
+		gap: var(--space-4);
 		align-items: baseline;
 	}
 }

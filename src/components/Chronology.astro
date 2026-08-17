@@ -1,12 +1,14 @@
 ---
 interface Props {
 	elementos: Array<{ fecha: string; titulo?: string; descripcion?: string }>;
+	class?: string;
 }
 
-const { elementos } = Astro.props;
+const { elementos, class: clase } = Astro.props;
+const lista = ['cronologia', clase].filter(Boolean).join(' ');
 ---
 
-<ol class="cronologia">
+<ol class={lista}>
 	{elementos.map((elemento) => (
 		<li class="cronologia__elemento">
 			<time class="cronologia__fecha">{elemento.fecha}</time>

@@ -1,36 +1,7 @@
 ---
 import Emblem from './Emblem.astro';
 import Divider from './Divider.astro';
-
-const urlUbicacion =
-	'https://www.google.com/maps/search/?api=1&query=Templo%20de%20Nuestra%20Se%C3%B1ora%20de%20las%20Mercedes%2C%2011%20avenida%20y%205a%20calle%2C%20zona%201%2C%20Ciudad%20de%20Guatemala';
-
-const secciones = [
-	{
-		titulo: 'La imagen',
-		enlaces: [
-			{ texto: 'La imagen', destino: '#imagen' },
-			{ texto: 'Ficha técnica', destino: '#ficha' },
-			{ texto: 'Historia', destino: '#historia' },
-		],
-	},
-	{
-		titulo: 'Tradición',
-		enlaces: [
-			{ texto: 'Tradición y leyenda', destino: '#tradicion' },
-			{ texto: 'Procesión', destino: '#procesion' },
-			{ texto: 'Visítanos', destino: '#visitanos' },
-		],
-	},
-	{
-		titulo: 'Asociación',
-		enlaces: [
-			{ texto: 'Asociación de Devotos (JDLM)', destino: '#visitanos' },
-			{ texto: 'Ver ubicación del templo', destino: urlUbicacion },
-			{ texto: 'Cuaresma y Semana Santa', destino: '#procesion' },
-		],
-	},
-];
+import { seccionesFooter } from '../data/sacra-traditio';
 ---
 
 <footer class="pie-pagina">
@@ -45,7 +16,7 @@ const secciones = [
 		</div>
 
 		<div class="pie-pagina__secciones">
-			{secciones.map((seccion) => (
+			{seccionesFooter.map((seccion) => (
 				<div class="pie-pagina__seccion">
 					<h3 class="pie-pagina__encabezado">{seccion.titulo}</h3>
 					<ul>

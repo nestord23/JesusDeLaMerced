@@ -1,63 +1,26 @@
 .encabezado-seccion {
 	text-align: center;
-	margin-bottom: var(--espacio-6);
+	margin-bottom: var(--space-6);
 }
 
 .encabezado-seccion__kicker {
 	display: block;
-	margin-bottom: var(--espacio-2);
-	font-family: var(--fuente-etiqueta);
-	font-size: var(--label-caps);
-	font-weight: 600;
-	line-height: var(--label-caps-linea);
-	letter-spacing: var(--label-caps-espaciado);
-	text-transform: uppercase;
-	color: var(--color-on-surface-variant);
-}
-
-.encabezado-seccion__titulo {
-	font-family: var(--fuente-display);
-	font-size: var(--headline-md);
-	font-weight: 600;
-	line-height: var(--headline-md-linea);
-	color: var(--color-primary-container);
-	text-wrap: balance;
+	margin-bottom: var(--space-2);
 }
 
 .encabezado-seccion__descripcion {
 	max-width: 38rem;
-	margin: var(--espacio-2) auto 0;
+	margin: var(--space-2) auto 0;
 	font-size: var(--body-md);
-	line-height: var(--body-md-linea);
+	line-height: var(--body-md-line-height);
 	color: var(--color-on-surface-variant);
-}
-
-.etiqueta {
-	display: block;
-	margin-bottom: var(--espacio-2);
-	font-family: var(--fuente-etiqueta);
-	font-size: var(--label-caps);
-	font-weight: 600;
-	line-height: var(--label-caps-linea);
-	letter-spacing: var(--label-caps-espaciado);
-	text-transform: uppercase;
-	color: var(--color-on-surface-variant);
-}
-
-.titulo-editorial {
-	margin-bottom: var(--espacio-2);
-	font-family: var(--fuente-display);
-	font-size: var(--headline-md);
-	font-weight: 600;
-	line-height: var(--headline-md-linea);
-	color: var(--color-primary-container);
 }
 
 .editorial {
 	max-width: 42rem;
 	margin-inline: auto;
 	font-size: var(--body-lg);
-	line-height: var(--body-lg-linea);
+	line-height: var(--body-lg-line-height);
 	color: var(--color-on-surface-warm);
 }
 
@@ -67,118 +30,31 @@
 }
 
 .editorial__parrafo + .editorial__parrafo {
-	margin-top: var(--espacio-3);
+	margin-top: var(--space-3);
 }
 
-.parrilla-dos {
-	display: grid;
-	gap: var(--espacio-6);
-	align-items: start;
-}
-
-.parrilla-dos--centrada {
-	align-items: center;
-}
-
-.parrilla-tres {
-	display: grid;
-	gap: var(--espacio-3);
-}
-
-@media (min-width: 768px) {
-	.parrilla-dos {
-		grid-template-columns: 1fr 1fr;
-		gap: var(--espacio-8);
-	}
-}
-
-@media (min-width: 860px) {
-	.parrilla-tres {
-		grid-template-columns: repeat(3, 1fr);
-	}
-}
-
-@media (min-width: 600px) {
-	.encabezado-seccion__titulo {
-		font-size: var(--display-lg-movil);
-		line-height: var(--display-lg-movil-linea);
-	}
-}
-
-.tarjeta {
-	background-color: var(--color-surface-container-lowest);
-	border: 1px solid var(--color-accent-gold-soft);
-	border-radius: var(--radio-base);
-	padding: var(--espacio-4);
-	box-shadow: var(--sombra-ambiente);
-}
-
-.tarjeta__emblema {
-	margin-bottom: var(--espacio-2);
-}
-
-.tarjeta__titulo {
-	margin-bottom: var(--espacio-1);
-	font-family: var(--fuente-display);
-	font-size: 19px;
-	font-weight: 600;
-	line-height: 1.35;
-	color: var(--color-primary-container);
-}
-
-.tarjeta__descripcion {
-	font-size: 15px;
-	line-height: var(--body-md-linea);
-	color: var(--color-on-surface-variant);
+.editorial .etiqueta {
+	display: block;
+	margin-bottom: var(--space-2);
 }
 
 .ruta {
 	background-color: var(--color-surface-container-low);
-	border-radius: var(--radio-lg);
-	padding: var(--espacio-5) var(--espacio-3);
+	border-radius: var(--radius-lg);
+	padding: var(--space-5) var(--space-3);
 }
 
 .ruta__nota {
 	max-width: 620px;
-	margin: 0 auto var(--espacio-5);
+	margin: 0 auto var(--space-5);
 	text-align: center;
 	font-size: 14px;
 	line-height: 1.6;
 	color: var(--color-on-surface-variant);
 }
 
-.ruta .cronologia__elemento::before {
-	--color-superficie-marcador: var(--color-surface-container-low);
-}
-
-.tarjeta-visita {
-	background-color: var(--color-primary-container);
-	color: rgba(255, 255, 255, 0.92);
-	border-radius: var(--radio-lg);
-	padding: var(--espacio-6) var(--espacio-4);
-	text-align: center;
-}
-
-.tarjeta-visita__etiqueta {
-	color: var(--color-accent-gold);
-}
-
-.tarjeta-visita__titulo {
-	margin-block: var(--espacio-2) var(--espacio-1);
-	font-family: var(--fuente-display);
-	font-size: 22px;
-	font-weight: 600;
-	line-height: 1.3;
-	color: #ffffff;
-}
-
-.tarjeta-visita__descripcion {
-	margin-bottom: var(--espacio-4);
-	color: rgba(255, 255, 255, 0.72);
-}
-
 @media (min-width: 600px) {
 	.ruta {
-		padding: var(--espacio-6) var(--espacio-4);
+		padding: var(--space-6) var(--space-4);
 	}
 }

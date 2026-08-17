@@ -10,9 +10,9 @@ html {
 
 body {
 	margin: 0;
-	font-family: var(--fuente-cuerpo);
+	font-family: var(--font-body);
 	font-size: var(--body-md);
-	line-height: var(--body-md-linea);
+	line-height: var(--body-md-line-height);
 	color: var(--color-on-surface-warm);
 	background-color: var(--color-surface);
 	-webkit-font-smoothing: antialiased;

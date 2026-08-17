@@ -1,13 +1,18 @@
-.chip {
-	display: inline-block;
+.etiqueta {
 	font-family: var(--font-label);
 	font-size: var(--label-caps);
 	font-weight: 600;
 	line-height: var(--label-caps-line-height);
 	letter-spacing: var(--label-caps-spacing);
 	text-transform: uppercase;
-	background-color: var(--color-accent-purple-tint);
+	color: var(--color-on-surface-variant);
+}
+
+.titulo-display {
+	font-family: var(--font-display);
+	font-size: var(--headline-md);
+	font-weight: 600;
+	line-height: var(--headline-md-line-height);
 	color: var(--color-primary-container);
-	padding: 7px 16px;
-	border-radius: var(--radius-full);
+	text-wrap: balance;
 }

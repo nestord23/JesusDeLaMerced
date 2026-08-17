@@ -16,8 +16,8 @@ La página presenta la historia de la imagen, su ficha técnica, las tradiciones
 ## Stack
 
 - [Astro](https://astro.build) 7
-- CSS vanilla por capas: tokens de diseño, reset, layouts, componentes (BEM en español) y features
-- Tipografías auto-alojadas con @fontsource-variable: Playfair Display, Source Serif 4 y Montserrat
+- CSS vanilla por capas: base, layouts, components (BEM en español), features y utilities
+- Tipografías auto-alojadas con @fontsource (subset latin): Playfair Display, Source Serif 4 y Montserrat
 
 ## Estructura
 
@@ -26,13 +26,15 @@ La página presenta la historia de la imagen, su ficha técnica, las tradiciones
 ├── public/
 ├── src
 │   ├── components/     # Emblem, Navbar, Footer, Button, Chip, Divider, FactCard, Chronology
+│   ├── data/           # Contenido y enlaces del sitio (sacra-traditio.ts)
 │   ├── layouts/        # Layout.astro (HTML base, fuentes y estilos)
 │   ├── pages/          # index.astro (página única)
 │   └── styles/
 │       ├── base/       # tokens y reset
-│       ├── layouts/    # contenedor y grid
+│       ├── layouts/    # contenedor, grid y parrillas
 │       ├── components/ # estilos BEM de componentes
-│       └── features/   # hero, navegación, secciones, pie de página
+│       ├── features/   # hero, navegación, secciones, pie de página
+│       └── utilities/  # utilidades tipográficas (etiqueta, título)
 └── package.json
 ```
 

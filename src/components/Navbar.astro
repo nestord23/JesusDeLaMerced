@@ -1,15 +1,6 @@
 ---
 import Emblem from './Emblem.astro';
-
-const enlaces = [
-	{ texto: 'Inicio', destino: '#inicio' },
-	{ texto: 'Historia', destino: '#historia' },
-	{ texto: 'La imagen', destino: '#imagen' },
-	{ texto: 'Ficha técnica', destino: '#ficha' },
-	{ texto: 'Tradición', destino: '#tradicion' },
-	{ texto: 'Procesión', destino: '#procesion' },
-	{ texto: 'Visítanos', destino: '#visitanos' },
-];
+import { enlacesNav } from '../data/sacra-traditio';
 ---
 
 <header class="navegacion">
@@ -20,7 +11,7 @@ const enlaces = [
 		</a>
 		<nav aria-label="Navegación principal">
 			<ul class="navegacion__lista">
-				{enlaces.map((enlace) => (
+				{enlacesNav.map((enlace) => (
 					<li>
 						<a class="navegacion__enlace" href={enlace.destino}>{enlace.texto}</a>
 					</li>

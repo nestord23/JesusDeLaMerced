@@ -1,12 +1,12 @@
 ---
 interface Props {
 	href?: string;
-	variant?: 'primario' | 'claro';
+	variant?: 'claro';
 	target?: string;
 	rel?: string;
 }
 
-const { href, variant = 'primario', target, rel } = Astro.props;
+const { href, variant = 'claro', target, rel } = Astro.props;
 const clase = `boton boton--${variant}`;
 ---
 

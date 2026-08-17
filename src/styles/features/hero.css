@@ -1,41 +1,31 @@
 .hero {
 	position: relative;
 	text-align: center;
-	padding-block: var(--espacio-8);
+	padding-block: var(--space-8);
 }
 
 .hero__marco {
-	margin: var(--espacio-6) auto var(--espacio-2);
+	margin: var(--space-6) auto var(--space-2);
 	width: min(560px, 90%);
 }
 
 .hero__kicker {
 	display: block;
-	margin-bottom: var(--espacio-2);
-	font-family: var(--fuente-etiqueta);
-	font-size: var(--label-caps);
-	font-weight: 600;
-	line-height: var(--label-caps-linea);
-	letter-spacing: var(--label-caps-espaciado);
-	text-transform: uppercase;
-	color: var(--color-on-surface-variant);
+	margin-bottom: var(--space-2);
 }
 
 .hero__titulo {
-	margin-bottom: var(--espacio-2);
-	font-family: var(--fuente-display);
-	font-size: var(--display-lg-movil);
+	margin-bottom: var(--space-2);
+	font-size: var(--display-lg-mobile);
 	font-weight: 700;
-	line-height: var(--display-lg-movil-linea);
-	color: var(--color-primary-container);
-	text-wrap: balance;
+	line-height: var(--display-lg-mobile-line-height);
 }
 
 .hero__descripcion {
 	max-width: 42rem;
 	margin-inline: auto;
 	font-size: var(--body-lg);
-	line-height: var(--body-lg-linea);
+	line-height: var(--body-lg-line-height);
 	color: var(--color-on-surface-variant);
 }
 
@@ -43,17 +33,17 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	gap: var(--espacio-2);
-	margin-top: var(--espacio-3);
+	gap: var(--space-2);
+	margin-top: var(--space-3);
 }
 
 .hero__indicador {
 	display: inline-block;
-	margin-top: var(--espacio-5);
-	font-family: var(--fuente-etiqueta);
+	margin-top: var(--space-5);
+	font-family: var(--font-label);
 	font-size: var(--label-caps);
 	font-weight: 600;
-	line-height: var(--label-caps-linea);
+	line-height: var(--label-caps-line-height);
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
 	color: var(--color-outline);
@@ -68,13 +58,13 @@
 @media (min-width: 600px) {
 	.hero__titulo {
 		font-size: var(--display-lg);
-		line-height: var(--display-lg-linea);
+		line-height: var(--display-lg-line-height);
 		letter-spacing: -0.02em;
 	}
 }
 
 @media (min-width: 1024px) {
 	.hero {
-		padding-block: var(--espacio-12);
+		padding-block: var(--space-12);
 	}
 }

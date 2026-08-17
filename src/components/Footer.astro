@@ -1,0 +1,67 @@
+---
+import Emblem from './Emblem.astro';
+import Divider from './Divider.astro';
+
+const urlUbicacion =
+	'https://www.google.com/maps/search/?api=1&query=Templo%20de%20Nuestra%20Se%C3%B1ora%20de%20las%20Mercedes%2C%2011%20avenida%20y%205a%20calle%2C%20zona%201%2C%20Ciudad%20de%20Guatemala';
+
+const secciones = [
+	{
+		titulo: 'La imagen',
+		enlaces: [
+			{ texto: 'La imagen', destino: '#imagen' },
+			{ texto: 'Ficha técnica', destino: '#ficha' },
+			{ texto: 'Historia', destino: '#historia' },
+		],
+	},
+	{
+		titulo: 'Tradición',
+		enlaces: [
+			{ texto: 'Tradición y leyenda', destino: '#tradicion' },
+			{ texto: 'Procesión', destino: '#procesion' },
+			{ texto: 'Visítanos', destino: '#visitanos' },
+		],
+	},
+	{
+		titulo: 'Asociación',
+		enlaces: [
+			{ texto: 'Asociación de Devotos (JDLM)', destino: '#visitanos' },
+			{ texto: 'Ver ubicación del templo', destino: urlUbicacion },
+			{ texto: 'Cuaresma y Semana Santa', destino: '#procesion' },
+		],
+	},
+];
+---
+
+<footer class="pie-pagina">
+	<div class="contenedor">
+		<div class="pie-pagina__superior">
+			<div class="pie-pagina__marca">
+				<Emblem variant="marca" />
+			</div>
+			<h2 class="pie-pagina__titulo">Jesús de la Merced</h2>
+			<p class="pie-pagina__lema">Patrón Jurado de la Ciudad de Guatemala</p>
+			<Divider />
+		</div>
+
+		<div class="pie-pagina__secciones">
+			{secciones.map((seccion) => (
+				<div class="pie-pagina__seccion">
+					<h3 class="pie-pagina__encabezado">{seccion.titulo}</h3>
+					<ul>
+						{seccion.enlaces.map((enlace) => (
+							<li>
+								<a class="pie-pagina__enlace" href={enlace.destino}>{enlace.texto}</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			))}
+		</div>
+
+		<div class="pie-pagina__inferior">
+			<p>© {new Date().getFullYear()} Jesús de la Merced — Patrón Jurado de la Ciudad de Guatemala</p>
+			<p>Página informativa elaborada en devoción a la imagen · no es un sitio oficial de la Asociación de Devotos</p>
+		</div>
+	</div>
+</footer>

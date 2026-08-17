@@ -1,0 +1,31 @@
+---
+import Emblem from './Emblem.astro';
+
+const enlaces = [
+	{ texto: 'Inicio', destino: '#inicio' },
+	{ texto: 'Historia', destino: '#historia' },
+	{ texto: 'La imagen', destino: '#imagen' },
+	{ texto: 'Ficha técnica', destino: '#ficha' },
+	{ texto: 'Tradición', destino: '#tradicion' },
+	{ texto: 'Procesión', destino: '#procesion' },
+	{ texto: 'Visítanos', destino: '#visitanos' },
+];
+---
+
+<header class="navegacion">
+	<div class="contenedor navegacion__contenido">
+		<a class="navegacion__marca" href="#inicio" aria-label="Jesús de la Merced, volver al inicio">
+			<Emblem variant="marca" />
+			<span class="navegacion__marca-texto">Jesús de la Merced</span>
+		</a>
+		<nav aria-label="Navegación principal">
+			<ul class="navegacion__lista">
+				{enlaces.map((enlace) => (
+					<li>
+						<a class="navegacion__enlace" href={enlace.destino}>{enlace.texto}</a>
+					</li>
+				))}
+			</ul>
+		</nav>
+	</div>
+</header>

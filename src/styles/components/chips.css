@@ -1,0 +1,13 @@
+.chip {
+	display: inline-block;
+	font-family: var(--fuente-etiqueta);
+	font-size: var(--label-caps);
+	font-weight: 600;
+	line-height: var(--label-caps-linea);
+	letter-spacing: var(--label-caps-espaciado);
+	text-transform: uppercase;
+	background-color: var(--color-accent-purple-tint);
+	color: var(--color-primary-container);
+	padding: 7px 16px;
+	border-radius: var(--radio-full);
+}

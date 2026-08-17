@@ -1,11 +1,405 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import Emblem from "../components/Emblem.astro";
+import Divider from "../components/Divider.astro";
+import Button from "../components/Button.astro";
+import Chip from "../components/Chip.astro";
+import FactCard from "../components/FactCard.astro";
+import Chronology from "../components/Chronology.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const etiquetasHero = [
+    "Viernes Santo",
+    "Consagrada en 1717",
+    "Devoción desde 1654",
+];
+
+const hitosHistoria = [
+    {
+        fecha: "1654",
+        titulo: "El encargo de la talla",
+        descripcion:
+            "Los cofrades de la Merced encomiendan la imagen «en blanco» al maestro escultor Mateo de Zúñiga, por un costo de 65 pesos.",
+    },
+    {
+        fecha: "1655",
+        titulo: "27 de marzo — encarnación",
+        descripcion:
+            "Joseph de la Serda concluye la encarnación y el colorido de la imagen, que es colocada solemnemente en su capilla.",
+    },
+    {
+        fecha: "1717",
+        titulo: "5 de agosto — consagración",
+        descripcion:
+            "El obispo Juan Bautista Álvarez y Toledo consagra la imagen: la primera consagración de una escultura sagrada en todo el continente americano.",
+    },
+    {
+        fecha: "1721",
+        titulo: "Patrón Jurado de la Ciudad",
+        descripcion:
+            "El Ayuntamiento la declara oficialmente Patrón Jurado, un título que conserva hasta hoy.",
+    },
+    {
+        fecha: "1773–76",
+        titulo: "Los terremotos de Santa Marta",
+        descripcion:
+            "Las procesiones se suspenden tras el desastre; la imagen no vuelve a salir a las calles sino hasta 1776.",
+    },
+    {
+        fecha: "1778",
+        titulo: "Traslado a la Nueva Guatemala",
+        descripcion:
+            "Con el traslado de la capital, la devoción se establece en la Nueva Guatemala de la Asunción, donde permanece hoy.",
+    },
+    {
+        fecha: "Hoy",
+        titulo: "Culto ininterrumpido",
+        descripcion:
+            "La Asociación de Devotos de Jesús Nazareno de la Merced (JDLM) da continuidad a más de tres siglos de tradición y organiza la Cuaresma y Semana Santa capitalinas.",
+    },
+];
+
+const filasFichaTecnica = [
+    { termino: "Advocación", valor: "Jesús Nazareno de la Merced" },
+    { termino: "Templo", valor: "Nuestra Señora de las Mercedes" },
+    {
+        termino: "Dirección",
+        valor: "5.ª calle 11-73, zona 1, Ciudad de Guatemala",
+    },
+    { termino: "Escultor", valor: "Mateo de Zúñiga (talla encargada en 1654)" },
+    {
+        termino: "Encarnador",
+        valor: "Joseph de la Serda (27 de marzo de 1655)",
+    },
+    {
+        termino: "Consagración",
+        valor: "5 de agosto de 1717 — primera imagen consagrada en América",
+    },
+    {
+        termino: "Título",
+        valor: "Patrón Jurado y protector de la ciudad (18 de febrero de 1721)",
+    },
+    { termino: "Día procesional", valor: "Viernes Santo" },
+    { termino: "Hora de salida", valor: "2:00 a. m." },
+    { termino: "Hora de entrada", valor: "2:30 p. m. (14:30 h)" },
+    {
+        termino: "Marcha oficial — Viernes Santo",
+        valor: "«Señor Pequé», de Joaquín Santa María y Vigil (1927)",
+    },
+    {
+        termino: "Marcha oficial — La Reseña",
+        valor: "«La Reseña», de Mónico de León",
+    },
+    {
+        termino: "Anda procesional",
+        valor: "86 brazos, madera de caoba (desde 2013)",
+    },
+    {
+        termino: "Asociación",
+        valor: "Asociación de Devotos de Jesús Nazareno de la Merced (JDLM)",
+    },
+];
+
+const leyendas = [
+    {
+        titulo: "El sudor del Nazareno",
+        descripcion:
+            "Una antigua tradición oral asegura que la imagen suda durante su largo recorrido de Viernes Santo, un gesto que los devotos leen como señal de su presencia viva entre la multitud.",
+    },
+    {
+        titulo: "La mano anónima",
+        descripcion:
+            "La memoria popular cuenta que fue un ayudante sordomudo de Mateo de Zúñiga quien talló el rostro de la imagen, un relato que envuelve de misterio la autoría de esta obra colonial.",
+    },
+    {
+        titulo: "El coronel de la Merced",
+        descripcion:
+            "El expresidente Rafael Carrera confirió a la imagen el grado militar honorario de coronel, gesto que refleja el peso simbólico que ha tenido en la vida cívica de la ciudad.",
+    },
+];
+
+const recorridoProcesion = [
+    {
+        fecha: "2:00",
+        titulo: "Salida del templo",
+        descripcion: "Templo de Nuestra Señora de las Mercedes",
+    },
+    { fecha: "3:20", titulo: "Parque Colón" },
+    { fecha: "5:40", titulo: "Parque Jocotenango" },
+    { fecha: "7:35", titulo: "Parque El Sauce" },
+    { fecha: "9:30", titulo: "Templo Santa Catalina" },
+    { fecha: "10:25", titulo: "Templo Santa Teresa" },
+    { fecha: "12:00", titulo: "Catedral Metropolitana" },
+    { fecha: "14:30", titulo: "Entrada al templo" },
+];
+
+const urlUbicacion =
+    "https://www.google.com/maps/search/?api=1&query=Templo%20de%20Nuestra%20Se%C3%B1ora%20de%20las%20Mercedes%2C%2011%20avenida%20y%205a%20calle%2C%20zona%201%2C%20Ciudad%20de%20Guatemala";
 ---
 
 <Layout>
-	<Welcome />
+    <Navbar />
+
+    <main id="inicio">
+        <section class="hero">
+            <div class="contenedor">
+                <span class="hero__kicker">
+                    Templo de Nuestra Señora de las Mercedes · Zona 1, Ciudad de
+                    Guatemala
+                </span>
+                <h1 class="hero__titulo">
+                    Jesús Nazareno<br />de la Merced
+                </h1>
+                <p class="hero__descripcion">
+                    Patrón Jurado de la Ciudad de Guatemala y la primera imagen
+                    sagrada consagrada en el continente americano.
+                </p>
+                <div class="hero__etiquetas">
+                    {etiquetasHero.map((etiqueta) => <Chip>{etiqueta}</Chip>)}
+                </div>
+                <!--
+				<figure class="marco-imagen marco-imagen--purpura hero__marco">
+					<Emblem variant="centro" animated />
+					<figcaption class="marco-imagen__caption">
+						Espacio reservado para fotografía oficial de la imagen
+					</figcaption>
+				</figure> -->
+
+                <a class="hero__indicador" href="#historia"
+                    >Descubra su historia ↓</a
+                >
+            </div>
+        </section>
+
+        <section class="seccion seccion--compacta">
+            <div class="contenedor">
+                <Divider />
+            </div>
+        </section>
+
+        <section class="seccion seccion--compacta">
+            <div class="contenedor">
+                <p class="editorial editorial--centrada">
+                    Desde su capilla en el corazón de la zona 1 capitalina,
+                    Jesús Nazareno de la Merced acompaña a la ciudad de
+                    Guatemala desde hace más de tres siglos. Tallada en 1654 por
+                    el maestro Mateo de Zúñiga, la imagen es hoy uno de los
+                    símbolos más entrañables de la fe guatemalteca: vestida de
+                    morado penitencial, y seguida cada Viernes Santo por miles
+                    de devotos que la acompañan por las calles del centro
+                    histórico.
+                </p>
+            </div>
+        </section>
+
+        <section class="seccion" id="historia">
+            <div class="contenedor">
+                <header class="encabezado-seccion">
+                    <span class="encabezado-seccion__kicker">Historia</span>
+                    <h2 class="encabezado-seccion__titulo">
+                        Tres siglos de devoción
+                    </h2>
+                    <p class="encabezado-seccion__descripcion">
+                        De la talla original en 1654 hasta la vida procesional
+                        de hoy, un recorrido por los hitos que marcaron a la
+                        imagen.
+                    </p>
+                </header>
+                <Chronology elementos={hitosHistoria} />
+            </div>
+        </section>
+
+        <section class="seccion seccion--compacta">
+            <div class="contenedor">
+                <Divider />
+            </div>
+        </section>
+
+        <section class="seccion" id="imagen">
+            <div class="contenedor">
+                <div class="parrilla-dos parrilla-dos--centrada">
+                    <figure
+                        class="marco-imagen marco-imagen--purpura marco-imagen--retrato"
+                    >
+                        <Emblem variant="centro" />
+                        <figcaption class="marco-imagen__caption">
+                            Espacio reservado para fotografía
+                        </figcaption>
+                    </figure>
+                    <div class="editorial">
+                        <span class="etiqueta">La imagen</span>
+                        <h2 class="titulo-editorial">
+                            Una mirada entre el dolor y la mansedumbre
+                        </h2>
+                        <p class="editorial__parrafo">
+                            La talla es reconocida por la profundidad de su
+                            mirada, que combina el sufrimiento del camino al
+                            Calvario con una serena mansedumbre. Viste túnica
+                            morada bordada, ciñe un cíngulo dorado y carga la
+                            cruz sobre el hombro — la iconografía clásica del
+                            Nazareno barroco guatemalteco.
+                        </p>
+                        <p class="editorial__parrafo">
+                            En su recorrido procesional es llevada en andas por
+                            cientos de cargadores ataviados con el tradicional
+                            cucurucho morado, entre el aroma del incienso, el
+                            paso acompasado de las marchas fúnebres y las
+                            alfombras de aserrín y flores que la ciudad le
+                            tiende a su paso.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion seccion--compacta">
+            <div class="contenedor">
+                <Divider />
+            </div>
+        </section>
+
+        <section class="seccion" id="ficha">
+            <div class="contenedor">
+                <header class="encabezado-seccion">
+                    <span class="encabezado-seccion__kicker">Ficha técnica</span
+                    >
+                    <h2 class="encabezado-seccion__titulo">
+                        Datos de la imagen
+                    </h2>
+                    <p class="encabezado-seccion__descripcion">
+                        Un registro breve, en el espíritu archivístico de la
+                        cofradía, con los datos que identifican a la imagen y su
+                        culto.
+                    </p>
+                </header>
+                <FactCard
+                    filas={filasFichaTecnica}
+                    nota="Horarios y recorrido de referencia (Semana Santa 2026); la fecha varía cada año porque la Pascua es una fiesta móvil."
+                />
+            </div>
+        </section>
+
+        <section class="seccion seccion--compacta">
+            <div class="contenedor">
+                <Divider />
+            </div>
+        </section>
+
+        <section class="seccion" id="tradicion">
+            <div class="contenedor">
+                <header class="encabezado-seccion">
+                    <span class="encabezado-seccion__kicker"
+                        >Tradición y leyenda</span
+                    >
+                    <h2 class="encabezado-seccion__titulo">
+                        Lo que cuentan los devotos
+                    </h2>
+                    <p class="encabezado-seccion__descripcion">
+                        Tres relatos transmitidos de generación en generación
+                        entre los fieles de la Merced.
+                    </p>
+                </header>
+                <div class="parrilla-tres">
+                    {
+                        leyendas.map((leyenda) => (
+                            <article class="tarjeta">
+                                <div class="tarjeta__emblema">
+                                    <Emblem variant="marca" />
+                                </div>
+                                <h3 class="tarjeta__titulo">
+                                    {leyenda.titulo}
+                                </h3>
+                                <p class="tarjeta__descripcion">
+                                    {leyenda.descripcion}
+                                </p>
+                            </article>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion seccion--compacta">
+            <div class="contenedor">
+                <Divider />
+            </div>
+        </section>
+
+        <section class="seccion" id="procesion">
+            <div class="contenedor">
+                <header class="encabezado-seccion">
+                    <span class="encabezado-seccion__kicker">Procesión</span>
+                    <h2 class="encabezado-seccion__titulo">El Viernes Santo</h2>
+                    <p class="encabezado-seccion__descripcion">
+                        Cada Viernes Santo, Jesús Nazareno de la Merced recorre
+                        el centro histórico en uno de los cortejos más
+                        multitudinarios del país.
+                    </p>
+                </header>
+                <div class="ruta">
+                    <p class="ruta__nota">
+                        Puntos de referencia registrados en Semana Santa 2026, a
+                        modo de ejemplo. Como la fecha de la Pascua cambia cada
+                        año, confirme siempre el itinerario vigente con la
+                        Asociación de Devotos.
+                    </p>
+                    <Chronology elementos={recorridoProcesion} />
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion seccion--compacta">
+            <div class="contenedor">
+                <Divider />
+            </div>
+        </section>
+
+        <section class="seccion" id="visitanos">
+            <div class="contenedor">
+                <div class="parrilla-dos parrilla-dos--centrada">
+                    <div class="editorial">
+                        <span class="etiqueta">Visítanos</span>
+                        <h2 class="titulo-editorial">
+                            Templo de Nuestra Señora de las Mercedes
+                        </h2>
+                        <p class="editorial__parrafo">
+                            La imagen permanece en su capilla durante todo el
+                            año, disponible para la visita y la devoción
+                            particular. Durante la Cuaresma, el templo organiza
+                            actos de veneración previos a la salida procesional
+                            del Viernes Santo.
+                        </p>
+                        <p class="editorial__parrafo">
+                            <strong>Dirección:</strong> 11 avenida y 5a calle, zona
+                            1, Ciudad de Guatemala.
+                        </p>
+                    </div>
+                    <aside class="tarjeta-visita">
+                        <span class="etiqueta tarjeta-visita__etiqueta">
+                            Patrón Jurado de la Ciudad
+                        </span>
+                        <h3 class="tarjeta-visita__titulo">
+                            Asociación de Devotos de Jesús Nazareno de la Merced
+                        </h3>
+                        <p class="tarjeta-visita__descripcion">
+                            Encargada, desde hace más de 300 años, de organizar
+                            el culto y las tradiciones de Cuaresma y Semana
+                            Santa en torno a la imagen.
+                        </p>
+                        <Button
+                            href={urlUbicacion}
+                            variant="claro"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Ver ubicación
+                        </Button>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
 </Layout>

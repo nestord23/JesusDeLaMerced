@@ -1,0 +1,23 @@
+.divisor {
+	display: flex;
+	align-items: center;
+	gap: var(--espacio-2);
+	width: 100%;
+	max-width: 560px;
+	margin-inline: auto;
+	color: var(--color-accent-gold);
+}
+
+.divisor__linea {
+	flex: 1;
+	height: 1px;
+	background: var(--color-accent-gold);
+	opacity: 0.55;
+	box-shadow: inset 0 0 1px var(--color-accent-gold);
+}
+
+@media (min-width: 600px) {
+	.divisor {
+		max-width: 640px;
+	}
+}

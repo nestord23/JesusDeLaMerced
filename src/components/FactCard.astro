@@ -1,0 +1,20 @@
+---
+interface Props {
+	filas: Array<{ termino: string; valor: string }>;
+	nota?: string;
+}
+
+const { filas, nota } = Astro.props;
+---
+
+<div class="ficha-tecnica">
+	<dl class="ficha-tecnica__lista">
+		{filas.map((fila) => (
+			<div class="ficha-tecnica__fila">
+				<dt class="ficha-tecnica__termino">{fila.termino}</dt>
+				<dd class="ficha-tecnica__valor">{fila.valor}</dd>
+			</div>
+		))}
+	</dl>
+	{nota && <p class="ficha-tecnica__nota">{nota}</p>}
+</div>

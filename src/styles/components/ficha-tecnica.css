@@ -1,0 +1,56 @@
+.ficha-tecnica {
+	background-color: var(--color-surface-container-lowest);
+	border: 1px solid var(--color-accent-gold-soft);
+	border-radius: var(--radio-base);
+	box-shadow: var(--sombra-ambiente);
+	padding: var(--espacio-4);
+}
+
+.ficha-tecnica__lista {
+	display: grid;
+	margin: 0;
+}
+
+.ficha-tecnica__fila {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--espacio-1);
+	padding-block: var(--espacio-2);
+}
+
+.ficha-tecnica__fila + .ficha-tecnica__fila {
+	border-top: 1px solid var(--color-accent-gold-faint);
+}
+
+.ficha-tecnica__termino {
+	font-family: var(--fuente-etiqueta);
+	font-size: var(--label-caps);
+	font-weight: 600;
+	line-height: var(--label-caps-linea);
+	letter-spacing: var(--label-caps-espaciado);
+	text-transform: uppercase;
+	color: var(--color-on-surface-variant);
+}
+
+.ficha-tecnica__valor {
+	font-size: 15px;
+	line-height: var(--body-md-linea);
+	color: var(--color-on-surface-warm);
+}
+
+.ficha-tecnica__nota {
+	margin: var(--espacio-3) 0 0;
+	padding-top: var(--espacio-3);
+	border-top: 1px solid var(--color-accent-gold-faint);
+	text-align: center;
+	font-size: 12.5px;
+	color: var(--color-outline);
+}
+
+@media (min-width: 640px) {
+	.ficha-tecnica__fila {
+		grid-template-columns: 220px 1fr;
+		gap: var(--espacio-4);
+		align-items: baseline;
+	}
+}

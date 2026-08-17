@@ -1,23 +1,44 @@
+---
+import '@fontsource-variable/playfair-display';
+import '@fontsource-variable/source-serif-4';
+import '@fontsource-variable/montserrat';
+
+import '../styles/base/tokens.css';
+import '../styles/base/reset.css';
+import '../styles/layouts/grid.css';
+import '../styles/components/boton.css';
+import '../styles/components/chips.css';
+import '../styles/components/divisor.css';
+import '../styles/components/emblema.css';
+import '../styles/components/marco-imagen.css';
+import '../styles/components/ficha-tecnica.css';
+import '../styles/components/cronologia.css';
+import '../styles/features/navegacion.css';
+import '../styles/features/pie-pagina.css';
+import '../styles/features/hero.css';
+import '../styles/features/secciones.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = 'Jesús Nazareno de la Merced · Templo de Nuestra Señora de las Mercedes, Guatemala',
+	description = 'Historia, iconografía, tradición y procesión de Jesús Nazareno de la Merced, Patrón Jurado de la Ciudad de Guatemala.',
+} = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="es-GT">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta name="description" content={description} />
+		<title>{title}</title>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

@@ -1,0 +1,21 @@
+---
+interface Props {
+	elementos: Array<{ fecha: string; titulo?: string; descripcion?: string }>;
+}
+
+const { elementos } = Astro.props;
+---
+
+<ol class="cronologia">
+	{elementos.map((elemento) => (
+		<li class="cronologia__elemento">
+			<time class="cronologia__fecha">{elemento.fecha}</time>
+			<div class="cronologia__contenido">
+				{elemento.titulo && <h3 class="cronologia__titulo">{elemento.titulo}</h3>}
+				{elemento.descripcion && (
+					<p class="cronologia__descripcion">{elemento.descripcion}</p>
+				)}
+			</div>
+		</li>
+	))}
+</ol>

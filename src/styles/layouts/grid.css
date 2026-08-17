@@ -1,0 +1,26 @@
+.contenedor {
+	width: 100%;
+	max-width: var(--contenedor-max);
+	margin-inline: auto;
+	padding-inline: var(--margen-movil);
+}
+
+.seccion {
+	padding-block: var(--espacio-8);
+}
+
+.seccion--compacta {
+	padding-block: var(--espacio-4);
+}
+
+@media (min-width: 600px) {
+	.contenedor {
+		padding-inline: var(--margen-tablet);
+	}
+}
+
+@media (min-width: 1024px) {
+	.seccion {
+		padding-block: var(--espacio-12);
+	}
+}
